@@ -3,14 +3,15 @@ import { Btn } from "./style";
 
 type Props = {
   children: ReactNode;
-  onClick: (e:React.FormEvent) => void;
+  onClick: () => void;
   opacity: boolean;
+  disabled: boolean;
 }
 
-const Button = ({children, onClick, opacity}: Props) => {
+const Button = ({children, onClick, opacity, disabled}: Props) => {
   return (
     <Btn 
-    disabled
+    disabled={disabled}
     opacity={opacity}
     type="button"
     onClick={onClick}>{children}</Btn>

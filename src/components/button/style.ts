@@ -15,7 +15,7 @@ const Btn = styled.button<BtnProps>`
 
   border-radius: 15px;
 
-  padding: 10px 15px;
+  padding: 20px 0;
   width: 100%;
 
   transition: 0.3s ease-in-out opacity;
