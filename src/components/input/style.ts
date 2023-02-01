@@ -5,6 +5,9 @@ const InputWrapper = styled.input`
   border: none;
   border-bottom: 2px solid #ddd;
   outline: none;
+
+  padding: 10px 0;
+  margin: 5px 0;
 `
 
 export {InputWrapper}
