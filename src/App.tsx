@@ -3,8 +3,21 @@ import Container from './components/container'
 import Title from './components/title'
 import Input from './components/input'
 import Button from './components/button'
+import Card from './components/card'
 import { Imc, imcHelper } from './helpers'
 import './App.css'
+
+const gridStyle = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(2, 1fr)',
+  gap: '1.4rem',
+  flex: '1'
+}
+
+const oneCardStyle = {
+  display: 'grid',
+  flex: '1',
+}
 
 
 
@@ -44,30 +57,50 @@ function App() {
           <Title color='var(--title-color)'>Calcule o seu IMC.</Title>
           <p>IMC é a sigla para Índice de Massa Corpórea, parâmetro adotado pela Organização Mundial da Saúde para calcular o peso ideal de cada pessoa.</p>
           <div>
-            <Input id='height'
-           type='number'
-           value={height > 0 ? height : ''}
-           onChange={(e) => {   
+            <Input 
+            id='height'
+            disabled={card ? true : false}
+            type='number'
+            value={height > 0 ? height : ''}
+            onChange={(e) => {   
               setHeight(parseFloat(e.target.value))
-           }}
+            }}
            placeholder='Digite a sua altura. Ex: 1.5 (em métros)'/>
-           <Input id='height'
-           type='number'
-           value={weight > 0 ? weight : ''}
-           onChange={(e) => {
+           <Input
+            id='height'
+            disabled={card ? true : false}
+            type='number'
+            value={weight > 0 ? weight : ''}
+            onChange={(e) => {
               setWeight(parseFloat(e.target.value))
-           }}
+            }}
            placeholder='Digite o seu peso. Ex: 75.3 (em kg)'/>
           </div>
           
           <Button
-            disabled={false} 
+            disabled={card ? true : false} 
             onClick={handleClick}
-            opacity={false}
+            opacity={card ? true : false}
             >Calcular</Button>
         </div>
-        <div className="right-side">
-
+        <div style={!card ? gridStyle : oneCardStyle}>
+          {!card && Imc.map((imc) => <Card
+           imgPath={imc.img}
+           bgColor={imc.color}
+           imcLevel={imc.title}
+           imcArr={imc.imc}
+           imcValue={imc.imcValue}
+           key={imc.title}
+           >
+            </Card>)}
+          {card && <Card
+          bgColor={card.color}
+          imcArr={card.imc}
+          imcValue={card.imcValue}
+          imgPath={card.img}
+          imcLevel={card.title}
+          onlyCard>
+            </Card>}
         </div>
       </Container>
     </Fragment>

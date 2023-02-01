@@ -25,17 +25,33 @@ body {
   align-items: center;
 }
 
+img {
+  max-width:  100%;
+}
+
 .left-side {
   display: grid;
+  width:800px;
   gap: 10px;
+  flex: 1;
+}
+
+.left-side div {
+  margin-bottom: 2rem;
 }
 
 .left-side p {
 
   color: #8e9497;
-  max-width: 50ch;
   line-height: 1.5;
   font-size: 1.1rem;
   margin-bottom: 2rem;
+  text-align:justify;
 }
 
+.right-side {
+  flex: 1;
+  display:  grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}

@@ -7,18 +7,21 @@ type Props = {
   onChange: (e:React.ChangeEvent<HTMLInputElement>) => void;
   id: string;
   value: any;
+  disabled: boolean;
 
 
 }
 
-const Input = ({placeholder, type, onChange,id, value, ...rest}:Props):JSX.Element => {
+const Input = ({placeholder, type, onChange,id, value, disabled, ...rest}:Props):JSX.Element => {
   return (
      <C.InputWrapper 
+     check={disabled}
      placeholder={placeholder}
      type={type}
      id={id}
      value={value}
      onChange={onChange}
+     disabled={disabled}
      {...rest}
      />
   )

@@ -21,7 +21,7 @@ const Btn = styled.button<BtnProps>`
   transition: 0.3s ease-in-out opacity;
 
   &:hover {
-    opacity: 0.7;
+    opacity: 1;
   }
 `
 
