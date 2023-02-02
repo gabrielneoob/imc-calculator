@@ -5,6 +5,7 @@ import Input from './components/input'
 import Button from './components/button'
 import Card from './components/card'
 import { Imc, imcHelper } from './helpers'
+import arrow from './assets/imgs/leftarrow.png'
 import './App.css'
 
 const gridStyle = {
@@ -100,6 +101,14 @@ function App() {
           imgPath={card.img}
           imcLevel={card.title}
           onlyCard>
+            <Button disabled={false} opacity={false} onClick={() => {
+              setHeight(0)
+              setWeight(0)
+              setCard(null)
+            }}>
+              {window.innerWidth < 750 ? 'VOLTAR' : <img src={arrow} alt="" height='30px' width="30px"/>}
+              
+            </Button>
             </Card>}
         </div>
       </Container>

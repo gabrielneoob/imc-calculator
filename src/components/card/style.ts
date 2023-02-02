@@ -12,6 +12,8 @@ const CardWrapper = styled.div<CardProps>`
   background-color: ${props => props.bgColor};
   align-content: ${props => props.onlyCard ? 'center': 'normal'};
   gap: ${props => props.onlyCard ? '1.4rem' : '0'};
+
+  position: relative;
   
   display: grid;
   padding:1.3rem 1rem 1rem 1rem;
@@ -34,9 +36,22 @@ const CardWrapper = styled.div<CardProps>`
     background-color: rgba(0,0,0,0.2);
     border-radius: 50%;
   }
+
+  button {
+    position: absolute;
+    left: -35px;
+    width: max-content;
+    padding:20px;
+    border-radius: 50%;
+  }
+
+  @media(max-width: 750px) {
+    button {
+      position: initial;
+      justify-self: center;
+    }
+  }
   
-
-
 `
 
 export {CardWrapper}

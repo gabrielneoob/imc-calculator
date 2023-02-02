@@ -31,7 +31,7 @@ img {
 
 .left-side {
   display: grid;
-  width:800px;
+  max-width: 800px;
   gap: 10px;
   flex: 1;
 }
@@ -49,9 +49,3 @@ img {
   text-align:justify;
 }
 
-.right-side {
-  flex: 1;
-  display:  grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.4rem;
-}

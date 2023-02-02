@@ -7,7 +7,7 @@ type ContainerProps = {
 
 const ContainerWrapper = styled.div<ContainerProps>`
   display: flex;
-  max-width: 1100px;
+  max-width: 1000px;
   gap:4rem;
   /* display: ${props => props.flex ? 'flex' : 'block'};
   background-color: ${props => props.bg}; */
@@ -19,7 +19,13 @@ const ContainerWrapper = styled.div<ContainerProps>`
       color: #fff;
     }
   } */
+  @media (max-width: 1000px) {
+    margin: 0 10px;
+  }
 
+  @media (max-width: 750px) {
+    display: block;
+  }
   
 `
 
